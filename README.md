@@ -24,17 +24,11 @@
 Набор текстовых файлов, на которых проводилось тестирование программы, а также правильные ответы на них можно найти в [этой] (https://github.com/kamilarakhimova/hse-os-hw1/tree/main/Тесты) папке. Значения параметров использовались следующие:
 
 ```
-
 > ./main input1.txt output1.txt 1 4
-
 > ./main input2.txt output2.txt 0 0
-
 > ./main input3.txt output3.txt 0 9
-
 > ./main input4.txt output4.txt 10 15
-
 > ./main input5.txt output5.txt 4900 4999
-
 ```
 
 ---
