@@ -25,15 +25,15 @@
 
 '''
 
-> ./main input1.txt output1.txt 1 4
+~/hw1-os$ ./main input1.txt output1.txt 1 4
 
-> ./main input2.txt output2.txt 0 0
+~/hw1-os$ ./main input2.txt output2.txt 0 0
 
-> ./main input3.txt output3.txt 0 9
+~/hw1-os$ ./main input3.txt output3.txt 0 9
 
-> ./main input4.txt output4.txt 10 15
+~/hw1-os$ ./main input4.txt output4.txt 10 15
 
-> ./main input5.txt output5.txt 4900 4999
+~/hw1-os$ ./main input5.txt output5.txt 4900 4999
 
 '''
 
