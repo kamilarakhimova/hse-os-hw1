@@ -62,7 +62,7 @@ int main(int argc, char *argv[]) {
     }
 
     fflush(NULL);
-    usleep(5000);
+    // usleep(5000);
 
     fd_process_2_file = open(name2, O_RDONLY);
     if (fd_process_2_file < 0) {
