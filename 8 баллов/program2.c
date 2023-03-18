@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
     int result;
 
     fflush(NULL);
-    usleep(1000);
+    // usleep(1000);
 
     (void)umask(0);
     mknod(name2, S_IFIFO | 0666, 0);
