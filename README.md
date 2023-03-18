@@ -143,7 +143,7 @@ int buf_size = 5555;
 
 ### ◉ Требования на 8 баллов:
 
-Требования, совпадающие с требованиями на более низкую оценку, всё ещё выполнены [тут](https://github.com/kamilarakhimova/hse-os-hw1/tree/main/8%20баллов/main.c).
+Требования, совпадающие с требованиями на более низкую оценку, всё ещё выполнены [тут](https://github.com/kamilarakhimova/hse-os-hw1/tree/main/8%20баллов/program1.c) и [тут](https://github.com/kamilarakhimova/hse-os-hw1/tree/main/8%20баллов/program2.c).
 
 
 ✔ Общая схема решаемой задачи:
