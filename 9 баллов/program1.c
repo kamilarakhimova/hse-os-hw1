@@ -34,13 +34,14 @@ int main(int argc, char *argv[]) {
     printf("Ура! Удалось открыть канал 'channel 1.fifo' между независимыми процессом-файловиком и процессом-обработчиком.\n");
     
     size = buf_size;
+    int k = 0;
     while (size == buf_size) {
         fd_input = open(input_file, O_RDONLY | O_NONBLOCK);
         if (fd_input < 0) {
             printf("Не удалось открыть входной файл. Сообщает процесс 1.\n");
             exit(-1);
         }
-        size = read(fd_input, input, buf_size);
+        size = read(fd_input, input + k, buf_size);
         if (size < 0) {
             printf("Не удалось прочитать входной файл. Сообщает процесс 1.\n");
             exit(-1);
@@ -54,10 +55,12 @@ int main(int argc, char *argv[]) {
         fd_file_2_process = open(name1, O_WRONLY | O_NONBLOCK);
         if (fd_file_2_process < 0) {
             printf("Не удалось открыть канал 'channel 1.fifo' для записи. Сообщает процесс 1.\n");
-            exit(-1);
+            break;
+        } else {
+            result = write(fd_file_2_process, input, buf_size);
+            printf("Ура! Удалось открыть канал 'channel 1.fifo' для записи. Сообщает процесс 1.\n\n");
         }
-        result = write(fd_file_2_process, input, buf_size);
-        printf("Ура! Удалось открыть канал 'channel 1.fifo' для записи. Сообщает процесс 1.\n\n");
+        k += buf_size;
     }
 
     printf("Ура! Удалось отправить данные по каналу 'channel 1.fifo'. Сообщает процесс 1.\n");
@@ -66,6 +69,7 @@ int main(int argc, char *argv[]) {
     usleep(6728);
   
     size = buf_size;
+    k = 0;
     while (size == buf_size) {
         fd_process_2_file = open(name2, O_RDONLY | O_NONBLOCK);
         if (fd_process_2_file < 0) {
@@ -80,7 +84,7 @@ int main(int argc, char *argv[]) {
             printf("Не удалось открыть выходной файл. Сообщает процесс 1.\n");
             exit(-1);
         }
-        result = write(fd_output, output, size);
+        result = write(fd_output, output + k, size);
         if (result < 0) {
             printf("Не удалось записать результат в выходной файл. Сообщает процесс 1.\n");
             exit(-1);
@@ -90,6 +94,7 @@ int main(int argc, char *argv[]) {
             printf("Не удалось закрыть выходной файл. Сообщает процесс 1.\n");
             exit(-1);
         }
+        k += buf_size;
     }
     printf("Ура!!! Завершил работу. Сообщает процесс 1.\n\n");
   
