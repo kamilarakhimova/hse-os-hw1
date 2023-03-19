@@ -185,5 +185,5 @@ int buf_size = 100;
 
 При правильной отработке программа выдаст примерно следующее:
 
-<img width="879" alt="Снимок экрана 2023-03-19 в 23 10 16" src="https://user-images.githubusercontent.com/58568615/226206126-e412e366-0bdd-4aef-bf5e-4a75412c2d49.png">
+<img width="879" alt="Снимок экрана 2023-03-19 в 23 20 13" src="https://user-images.githubusercontent.com/58568615/226206596-b1045074-7fb2-4739-ade1-728d8a7ce50c.png">
 
