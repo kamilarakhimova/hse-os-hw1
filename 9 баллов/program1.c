@@ -60,10 +60,11 @@ int main(int argc, char *argv[]) {
         printf("Ура! Удалось открыть канал 'channel 1.fifo' для записи. Сообщает процесс 1.\n\n");
     }
 
-    fflush(NULL);
-    usleep(5728);
-  
+    printf("Ура! Удалось отправить данные по каналу 'channel 1.fifo'. Сообщает процесс 1.\n");
 
+    fflush(NULL);
+    usleep(6728);
+  
     size = buf_size;
     while (size == buf_size) {
         fd_process_2_file = open(name2, O_RDONLY | O_NONBLOCK);
@@ -73,7 +74,7 @@ int main(int argc, char *argv[]) {
         }
         size = read(fd_process_2_file, output, buf_size);
         printf("Ура! Удалось получить результат по каналу 'channel 2.fifo'. Сообщает процесс 1.\n");
- 
+
         fd_output = open(output_file, O_WRONLY | O_CREAT, 0666);
         if (fd_output < 0) {
             printf("Не удалось открыть выходной файл. Сообщает процесс 1.\n");
